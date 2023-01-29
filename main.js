@@ -275,6 +275,19 @@ const cardsOnDom = (array) => {
   renderToDom("#PetCard", domString);
 };
 
+const searchBar = (e) => {
+  const eventSB = event.target.value.toLowerCase();
+  const searchResults = pet.filter (result => 
+    pet.name ||
+    pet.type ||
+    pet.color );
+cardsOnDom(searchResults);
+
+};
+
+
+document.querySelector('#searchInput').addEventListener('keyup', searchBar);
+
 const filter = (petArray, typeOfPet) =>{
   const Array = [];
 for (const pet1 of petArray) {
